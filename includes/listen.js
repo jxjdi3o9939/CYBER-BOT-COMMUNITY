@@ -265,7 +265,7 @@ module.exports = function({ api, models }) {
 	
 	return (event) => {
     if (event.type == "change_thread_image") api.sendMessage(`» [ GROUP UPDATES ] ${event.snippet}`, event.threadID);
-    let data = JSON.parse(fs.readFileSync(__dirname + "/../Script/commands/cache/approvedThreads.json"));
+    let data = JSON.parse(fs.readFileSync(__dirname + "/../Script/commands/ullash/approvedThreads.json"));
     let adminBot = global.config.ADMINBOT
     if (!data.includes(event.threadID) && !adminBot.includes(event.senderID)) {
       //getPrefix
@@ -310,3 +310,4 @@ module.exports = function({ api, models }) {
     }
   };
 };
+			
